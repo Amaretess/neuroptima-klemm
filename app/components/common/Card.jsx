@@ -1,14 +1,14 @@
 import React from 'react'
+import { Container } from '../styles/commonStyles'
+import { CardContainer } from '../styles/CardStyles'
 
 const Card = () => {
     return (
-        <>
-            <div>Card</div>
-            <div>Card</div>
-            <div>Card</div>
-        </>
+        <CardContainer mobileWidth="1rem" height="35vh">
+            content inside card
+        </CardContainer>
 
     )
 }
 
-export default Card
+export default Card;

@@ -4,14 +4,14 @@ import Banner from './components/common/Banner';
 import DisplayCards from './components/common/DisplayCards';
 import Section from './components/common/Section';
 import DisplayVideo from './components/home/DisplayVideo';
+import SectionOne from './components/home/SectionTwo';
 
 const HomePage = () => {
   return (
     <>
-      Home Page
       <Jumbotron />
       <Banner />
-      <Section />
+      <SectionOne />
       <Section />
       <DisplayVideo />
       <Section />

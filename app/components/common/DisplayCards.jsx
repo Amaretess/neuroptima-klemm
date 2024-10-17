@@ -4,7 +4,7 @@ import Card from './Card';
 
 const DisplayCards = () => {
     return (
-        <Container>
+        <Container width="95vw" mobileWidth="90vw" height="40vh">
             <Card />
             <Card />
             <Card />

@@ -1,8 +1,9 @@
 import React from 'react'
+import { Container } from '../styles/commonStyles';
 
 const DisplayVideo = () => {
     return (
-        <div>DisplayVideo</div>
+        <Container width="95vw" mobileWidth="90vw" height="90vh">DisplayVideo</Container>
     )
 }
 
