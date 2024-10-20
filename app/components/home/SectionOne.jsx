@@ -3,7 +3,9 @@ import React from 'react';
 
 const SectionOne = () => {
     return (
-        <Container height="75vh" width="95vw">SectionOne</Container>
+        <Container height="50vh" width="100vw">
+
+        </Container>
     )
 }
 

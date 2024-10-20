@@ -4,18 +4,17 @@ import Banner from './components/common/Banner';
 import DisplayCards from './components/common/DisplayCards';
 import Section from './components/common/Section';
 import DisplayVideo from './components/home/DisplayVideo';
-import SectionOne from './components/home/SectionTwo';
+import SectionOne from './components/home/SectionOne';
 
 const HomePage = () => {
   return (
     <>
       <Jumbotron />
       <Banner />
-      <SectionOne />
+      <DisplayCards />
       <Section />
       <DisplayVideo />
       <Section />
-      <DisplayCards />
       
     </>
   )

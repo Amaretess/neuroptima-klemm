@@ -5,12 +5,14 @@ export const CardContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95vw;
+    width: ${(props) => props.width || "5rem"};
     border: 2px solid red;
+    border-radius: 25px;
+    margin: ${(props) => props.margin || "0rem"};
     height: ${(props) => props.height || "5rem"};
 
     @media (max-width: 768px) {
-        width: ${(props) => props.mobileWidth || "5rem"};
+        width: ${(props) => props.mobilewidth || "5rem"};
         height: ${(props) => props.mobileHeight || "5rem"}
     }
 `

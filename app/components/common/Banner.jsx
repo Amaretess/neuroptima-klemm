@@ -4,7 +4,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <Container height="10vh" width="95vw" mobileWidth="90vw">Banner</Container>
+        <Container height="10vh" width="100vw" mobilewidth="100vw">Banner</Container>
     )
 }
 

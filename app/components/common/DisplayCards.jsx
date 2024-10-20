@@ -4,12 +4,20 @@ import Card from './Card';
 
 const DisplayCards = () => {
     return (
-        <Container width="95vw" mobileWidth="90vw" height="40vh">
-            <Card />
-            <Card />
-            <Card />
-        </Container>
+        <>
+
+            <Container width="100vw" mobilewidth="100vw" height="100vh" mobileFlexDirection="column">
+
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </Container>
+
+        </>
+
     )
 }
 
 export default DisplayCards;
+

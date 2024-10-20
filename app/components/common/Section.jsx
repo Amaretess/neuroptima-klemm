@@ -3,7 +3,7 @@ import { Container } from '../styles/commonStyles';
 
 const Section = () => {
     return (
-        <Container width="95vw" mobileWidth="90vw" height="40vh">Section</Container>
+        <Container width="100vw" mobilewidth="100vw" height="40vh">Section</Container>
     )
 };
 

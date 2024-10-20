@@ -6,7 +6,7 @@ export const Container = styled.div`
     justify-content: ${(props) => props.justifyContent || "center"};
     align-items: ${(props) => props.alignItems || "center"};
     padding: ${(props) => props.padding || '1rem'};
-    margin: ${(props) => props.margin || '1rem'};
+    margin: ${(props) => props.margin || '0rem'};
     height: ${(props) => props.height || '1rem'};
     width: ${(props) => props.width || '1rem'};
     border: ${(props) => props.border || '1px solid black'};
@@ -16,7 +16,8 @@ export const Container = styled.div`
 
     // media query for screens smaller than 768px (mobile)
     @media (max-width: 768px) {
-        width: ${(props) => props.mobileWidth || "10rem"};
+        width: ${(props) => props.mobilewidth || "10rem"};
+        flex-direction: ${(props) => props.mobileFlexDirection || "row"};
     }
 
 `;
