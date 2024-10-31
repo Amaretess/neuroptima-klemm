@@ -11,6 +11,7 @@ const DisplayCards = ({ images }) => {
             const loadImages = async () => {
                 try {
                     let importedImages;
+                    const imageRegex = /\.(jpg|jpeg|png|gif|bmp|svg)$/i;
 
                     if (Array.isArray(images)) {
                         importedImages = images;
@@ -18,11 +19,11 @@ const DisplayCards = ({ images }) => {
                         const module = await import(`../images/${images}`);
                         importedImages = module.default;
                         for (let i = 0; i < importedImages.length; i++) {
-                            if (/\.(jpg|jpeg|png|gif|bmp|svg)$/i.test(importedImages[i]) && !importedImages[i].includes("/images/")) {
+                            if (imageRegex.test(importedImages[i]) && !importedImages[i].includes("/images/")) {
                                 importedImages[i] = "/images/" + importedImages[i];
                             }
                         }
-                    } else if (/\.(jpg|jpeg|png|gif|bmp|svg)$/i.test(images)) {
+                    } else if (imageRegex.test(images)) {
                         const fileName = (images.includes("/images/") ? "" : "/images/") + images;
                         importedImages = [fileName];
                     } else {
