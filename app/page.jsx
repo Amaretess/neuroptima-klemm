@@ -3,21 +3,25 @@ import Jumbotron from './components/home/Jumbotron';
 import Banner from './components/common/Banner';
 import DisplayCards from './components/common/DisplayCards';
 import Section from './components/common/Section';
-import DisplayVideo from './components/home/DisplayVideo';
-import SectionOne from './components/home/SectionOne';
+import ClientModal from './functions/clientModal';
+
+
 
 const HomePage = () => {
   return (
     <>
       <Jumbotron />
       <Banner />
-      <DisplayCards />
+      <DisplayCards images={"productImages.js"} />
       <Section />
-      <DisplayVideo />
       <Section />
-      
+      <Section />
+      <Section />
+      <DisplayCards images={false} />
+      <ClientModal />
     </>
   )
 }
 
 export default HomePage;
+

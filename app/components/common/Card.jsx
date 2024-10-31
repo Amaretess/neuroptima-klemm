@@ -1,13 +1,13 @@
-import React from 'react'
-import { CardContainer } from '../styles/CardStyles'
+import React from 'react';
+import { CardContainer } from '../styles/CardStyles';
 
-const Card = () => {
+const Card = ({ image }) => {
+
     return (
-        <CardContainer mobilewidth="20rem" mobileHeight="10rem" margin="1rem" height="50vh" width="20rem" >
-            content inside card
+        <CardContainer mobilewidth="20rem" mobileheight="10rem" margin="1rem" height="40vh" width="20rem" >
+            <img src={image} />
         </CardContainer>
-
-    )
-}
+    );
+};
 
 export default Card;
