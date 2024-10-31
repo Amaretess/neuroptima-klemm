@@ -3,48 +3,28 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { DisplayCardsContainer } from '../styles/CardStyles';
 import { TitleContainer } from '../styles/commonStyles';
+import loadImages from "./functions/gatherCardImages";
 
 const DisplayCards = ({ images }) => {
     const [imageFiles, setImageFiles] = useState([]);
+
     if (images) {
         useEffect(() => {
-            const loadImages = async () => {
-                try {
-                    let importedImages;
-                    const imageRegex = /\.(jpg|jpeg|png|gif|bmp|svg)$/i;
-
-                    if (Array.isArray(images)) {
-                        importedImages = images;
-                    } else if (images.endsWith('.js')) {
-                        const module = await import(`../images/${images}`);
-                        importedImages = module.default;
-                        for (let i = 0; i < importedImages.length; i++) {
-                            if (imageRegex.test(importedImages[i]) && !importedImages[i].includes("/images/")) {
-                                importedImages[i] = "/images/" + importedImages[i];
-                            }
-                        }
-                    } else if (imageRegex.test(images)) {
-                        const fileName = (images.includes("/images/") ? "" : "/images/") + images;
-                        importedImages = [fileName];
-                    } else {
-                        importedImages = [images];
-                    }
-                    setImageFiles(importedImages);
-                } catch (error) {
-                    console.error("Failed to load images:", error);
-                    setImageFiles([]);
-                }
+            const fetchImages = async () => {
+                const loadedImages = await loadImages(images);
+                setImageFiles(loadedImages);
             };
-
-            loadImages();
+            fetchImages();
         }, [images]);
+    } else {
+        setImageFiles([]);
     }
 
     return (
         <div>
             <TitleContainer>HELLO</TitleContainer>
             <DisplayCardsContainer>
-                {imageFiles ? imageFiles.map((image, index) => (
+                {imageFiles.length > 0 ? imageFiles.map((image, index) => (
                     <Card key={index} image={image} />
                 )) : (<Card />)}
             </DisplayCardsContainer>
@@ -53,6 +33,3 @@ const DisplayCards = ({ images }) => {
 };
 
 export default DisplayCards;
-
-
-
